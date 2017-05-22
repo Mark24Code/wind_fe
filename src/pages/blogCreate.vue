@@ -21,7 +21,7 @@ import axios from 'axios'
 import VueMarkdown from 'vue-markdown'
 import {
     DOMAIN
-} from '../config.js'
+} from '@/config.js'
 export default {
     name: 'blogCreate',
     data() {
@@ -88,7 +88,7 @@ export default {
     }
 }
 </script>
-<style lang="less">
+<style lang="scss">
 .blogCreate {
     textarea {
         border: none;

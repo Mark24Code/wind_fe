@@ -29,7 +29,7 @@ import axios from 'axios'
 import Base64 from 'base64util'
 // import md5Hex from 'md5-hex'
 import SparkMD5 from 'spark-md5'
-import {DOMAIN} from '../config.js'
+import {DOMAIN} from '@/config.js'
 export default {
     name: 'login',
     data() {
@@ -78,7 +78,7 @@ export default {
     components: {}
 }
 </script>
-<style lang="less">
+<style lang="scss">
 .z-login-form{
     padding-bottom: 20px;
 }

@@ -12,8 +12,8 @@
 </template>
 <script>
 import axios from 'axios'
-import {DOMAIN} from '../config.js'
-import blogCard from './blogCard.vue'
+import {DOMAIN} from '@/config.js'
+import blogCard from '@/pages/blogCard.vue'
 export default {
     name: 'home',
     data() {

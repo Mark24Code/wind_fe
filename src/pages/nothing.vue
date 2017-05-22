@@ -10,7 +10,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="scss">
   .nothing{
     width: 100%;
     height: 400px;

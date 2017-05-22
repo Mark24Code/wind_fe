@@ -54,7 +54,7 @@ export default {
     }
 }
 </script>
-<style lang="less">
+<style lang="scss">
 .right{
     float: right;
 }

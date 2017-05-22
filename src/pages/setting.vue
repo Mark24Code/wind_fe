@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-import nothing from './nothing.vue'
+import nothing from './nothing.vue';
 export default {
     name: 'setting',
     data() {

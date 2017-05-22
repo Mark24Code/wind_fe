@@ -1,20 +1,20 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 
-import home from '@/pages/home'
-import blogs from '@/pages/blogs'
-import blog from '@/pages/blog'
-import lab from '@/pages/lab'
-import about from '@/pages/about'
-import login from '@/pages/login'
-import manager from '@/pages/manager'
-import dashboard from '@/pages/dashboard'
-import blogList from '@/pages/blogList'
-import setting from '@/pages/setting'
-import blogCreate from '@/pages/blogCreate'
-import blogEdit from '@/pages/blogEdit'
+import home from '@/pages/home';
+import blogs from '@/pages/blogs';
+import blog from '@/pages/blog';
+import lab from '@/pages/lab';
+import about from '@/pages/about';
+import login from '@/pages/login';
+import manager from '@/pages/manager';
+import dashboard from '@/pages/dashboard';
+import blogList from '@/pages/blogList';
+import setting from '@/pages/setting';
+import blogCreate from '@/pages/blogCreate';
+import blogEdit from '@/pages/blogEdit';
 
-Vue.use(Router)
+Vue.use(Router);
 
 let routes = [{
     path: '/',

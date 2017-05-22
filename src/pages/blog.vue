@@ -21,7 +21,7 @@
 import axios from 'axios'
 import {
     DOMAIN
-} from '../config.js'
+} from '@/config.js'
 import VueMarkdown from 'vue-markdown'
 export default {
     name: 'blog',
@@ -53,7 +53,7 @@ export default {
     }
 }
 </script>
-<style lang="less">
+<style lang="scss">
 .blog img{
     width: 80%;
 }

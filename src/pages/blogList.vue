@@ -50,7 +50,7 @@
 </template>
 <script>
 import axios from 'axios'
-import {DOMAIN} from '../config.js'
+import {DOMAIN} from '@/config.js'
 export default {
     name: 'blogList',
     data() {

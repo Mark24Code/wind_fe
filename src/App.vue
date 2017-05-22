@@ -36,13 +36,10 @@
     </div>
 </template>
 <script>
-import semantic from '../semantic/dist/semantic.min.js'
-import '../semantic/dist/semantic.min.css'
 
 export default {
     name: 'app',
     mounted() {
-        $('.ui.dropdown').dropdown();
 
     },
     data() {
@@ -65,7 +62,7 @@ export default {
     }
 }
 </script>
-<style lang='less'>
+<style lang='scss'>
 #app .setting-menu {
     position: fixed;
     right: 50px;
@@ -73,7 +70,9 @@ export default {
     z-index: 9999;
 }
 
-.z-nav {}
+.z-nav {
+    background:red;
+}
 
 .z-content {
     margin-top: 40px;

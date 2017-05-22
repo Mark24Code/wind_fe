@@ -15,7 +15,7 @@
     </div>
 </template>
 <script>
-import nothing from './nothing.vue'
+import nothing from '@/pages/nothing.vue'
 export default {
     name: 'lab',
     data() {
