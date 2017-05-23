@@ -1,18 +1,18 @@
 <template>
     <div class="blogCreate">
-        <div class="ui top attached tabular menu">
-            <a class="item" :class="editorActive" @click="activeEditor">编辑</a>
-            <a class="item" :class="previewActive" @click="activePreview">预览</a>
-        </div>
-        <div id="editor" v-if="editorShow" class="v-editor ui bottom attached segment">
+        <mu-tabs :value="activeTab" @change="handleTabChange">
+            <mu-tab value="edit_tab" title="编辑" @click="activeEditor"/>
+            <mu-tab value="preview_tab" title="预览" @click="activePreview"/>
+        </mu-tabs>
+        <div id="editor"  v-if="activeTab === 'edit_tab'">
             <textarea v-model="content" rows="20"></textarea>
         </div>
-        <div id="preview" v-if="previewShow" class="v-preview ui bottom attached segment">
+        <div id="preview" v-if="activeTab === 'preview_tab'">
             <VueMarkdown>{{preview_content}}</VueMarkdown>
         </div>
-        <div class="z-btns">
-            <button class="ui basic button" @click="cancelCreate">取消</button>
-            <button class="ui green basic button" @click='saveCreate'>保存</button>
+        <div class="btns-cont">
+            <mu-raised-button label="取消" class="btn" @click="cancelCreate"/>
+            <mu-raised-button label="保存" class="btn"  @click='saveCreate' primary/>
         </div>
     </div>
 </template>
@@ -26,32 +26,23 @@ export default {
     name: 'blogCreate',
     data() {
         return {
+            activeTab: 'edit_tab',
             content: '',
-            current_view: 'editor', //editor,preview,
             preview_content: ''
         }
     },
     computed: {
-        editorActive() {
-            return this.current_view == 'editor' ? 'active' : ''
-        },
-        previewActive() {
-            return this.current_view == 'preview' ? 'active' : ''
-        },
-        editorShow() {
-            return this.current_view == 'editor' ? true : false
-        },
-        previewShow() {
-            return this.current_view == 'preview' ? true : false
-        },
+
     },
     methods: {
-        activeEditor() {
-            this.current_view = 'editor'
+        handleTabChange (val) {
+          this.activeTab = val;
+        },
+        activeEditor(){
+
         },
         activePreview() {
-            this.current_view = 'preview'
-            this.preview_content = this.content
+            this.preview_content = this.content;
         },
         saveCreate() {
             let self = this
@@ -94,14 +85,25 @@ export default {
         border: none;
         resize: none;
         outline: none;
-        background-color: #f6f6f6;
+        background-color: #f4f4f4;
         font-size: 14px;
         font-family: 'Monaco', courier, monospace;
         padding: 20px;
         width: 100%;
     }
+    #editor{
+        padding:20px;
+    }
     #preview {
         min-height: 380px;
+        margin: 20px;
+    }
+    .btns-cont{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .btn{
+        margin: 12px;
     }
 }
 

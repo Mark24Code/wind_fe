@@ -1,53 +1,6 @@
 @charset "UTF-8";
 
 @import './_rem.scss';
-/***** 覆盖Mint UI ************************/
-
-/* mint-header */
-.mint-header {
-    width: 100%;
-    height: rem(85px);
-    background:#ee7a19;
-    font-size: rem(36px);
-    font-weight: bold;
-}
-
-/* mint-toast */
-.mint-toast {
-    position: fixed;
-    max-width: 100%;
-    border-radius: 0px;
-    background: rgba(0, 0, 0, 0.7);
-    box-sizing: none;
-    text-align: none;
-    z-index: 1000;
-    -webkit-transition: opacity .3s linear;
-    transition: opacity .3s linear;
-
-    /* custome */
-    width:100%;
-    height: rem(85px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: rem(36px);
-    font-weight: bold;
-    background:#337ab7;
-    color:#fff;
-}
-
-.mint-toast.is-placetop {
-    top: 0px;
-}
-.mint-toast.info{
-    background:#337ab7;
-}
-.mint-toast.warning{
-    background:#f0ad4e;
-}
-.mint-toast.danger{
-    background:#d9534f;
-}
 
 /***** 自定义组件 *************************/
 /* HTML 基础样式 */
@@ -60,32 +13,4 @@ option {
 input {
     color: #888;
     font-size: rem(28px);
-}
-/* 嵌套子页模板 */
-.page-cont{
-    min-height: rem(1200px);
-    margin-bottom: rem(140px);
-    background: #f4f4f4;
-    overflow: hidden;
-}
-
-/* 组件 */
-.btn{
-    width: 100%;
-    height: rem(88px);
-    font-size:rem(36px);
-    font-weight: bold;
-    color:#fff;
-    border-radius: rem(10px);
-    background:#ed7918;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-primary{
-    background:#fbfafc;
-    color:#000;
-    border:rem(1px) solid #d6d5d6;
-    font-weight: normal;
 }
