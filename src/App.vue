@@ -7,14 +7,22 @@
                 <mu-menu-item title="登出" />
             </mu-icon-menu>
         </mu-appbar>
-        <!-- <router-view></router-view>  -->
+        <router-view></router-view>
         <mu-drawer :open="sidebar_open" :docked="sidebar_docked" @close="toggle_sidebar(true)">
             <mu-appbar title="" @click.native="sidebar_open = false"></mu-appbar>
             <mu-list>
-                <mu-list-item title="首页" />
-                <mu-list-item title="博客" />
-                <mu-list-item title="实验室" />
-                <mu-list-item title="关于" @click.native="sidebar_open = false" />
+                <router-link :to="{name:'home'}">
+                    <mu-list-item title="首页" @click.native="sidebar_open = false" />
+                </router-link>
+                <router-link :to="{name:'blogs'}">
+                    <mu-list-item title="博客" @click.native="sidebar_open = false" />
+                </router-link>
+                <router-link :to="{name:'lab'}">
+                    <mu-list-item title="实验室" @click.native="sidebar_open = false" />
+                </router-link>
+                <router-link :to="{name:'about'}">
+                    <mu-list-item title="关于" @click.native="sidebar_open = false" />
+                </router-link>
                 <mu-divider/>
                 <mu-icon-button href="https://github.com/mark24code">
                     <i class="fa fa-github"></i>
@@ -25,7 +33,6 @@
                 <mu-icon-button href="https://www.zhihu.com/people/mark24">
                     <i class="fa fa-quote-left"></i>
                 </mu-icon-button>
-
             </mu-list>
         </mu-drawer>
     </div>
