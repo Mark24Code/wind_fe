@@ -12,6 +12,18 @@
         <mu-drawer :open="sidebar_open" :docked="sidebar_docked" @close="toggle_sidebar(true)">
             <mu-appbar title="" @click.native="sidebar_open = false"></mu-appbar>
             <mu-list>
+                <div v-if="token.length>0">
+                <router-link :to="{name:'dashboard'}">
+                    <mu-list-item title="仪表盘" @click.native="sidebar_open = false" />
+                </router-link>
+                <router-link :to="{name:'blogList'}">
+                    <mu-list-item title="管理列表" @click.native="sidebar_open = false" />
+                </router-link>
+                <router-link :to="{name:'setting'}">
+                    <mu-list-item title="设置" @click.native="sidebar_open = false" />
+                </router-link>
+                </div>
+                <mu-divider/>
                 <router-link :to="{name:'home'}">
                     <mu-list-item title="首页" @click.native="sidebar_open = false" />
                 </router-link>
@@ -52,8 +64,8 @@ export default {
     },
     computed: {
         token() {
-            console.log('TOKEN:', this.$store.getters.user_token)
-            return this.$store.getters.user_token
+            // console.log('TOKEN:', this.$store.getters.user_token)
+            return this.$store.getters.user_token;
         }
     },
     methods: {
@@ -63,14 +75,14 @@ export default {
         login(){
             this.$router.push({
                 name: 'login'
-            })
+            });
         },
         logOut() {
-            let self = this
-            self.$store.dispatch("user_clear")
+            let self = this;
+            self.$store.dispatch("user_clear");
             self.$router.push({
                 name: 'home'
-            })
+            });
         }
     }
 }
