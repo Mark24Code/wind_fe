@@ -3,11 +3,12 @@
         <mu-appbar title="MARK24">
             <mu-icon-button icon="menu" slot="left" @click="toggle_sidebar()" />
             <mu-icon-menu icon="account_circle" slot="right">
-                <mu-menu-item title="登录" />
-                <mu-menu-item title="登出" />
+                <mu-menu-item v-if="!token" title="登录" @click="login"/>
+                <mu-menu-item v-if="token" title="登出" @click="logOut"/>
             </mu-icon-menu>
         </mu-appbar>
         <router-view></router-view>
+        <!-- siderbar -->
         <mu-drawer :open="sidebar_open" :docked="sidebar_docked" @close="toggle_sidebar(true)">
             <mu-appbar title="" @click.native="sidebar_open = false"></mu-appbar>
             <mu-list>
@@ -59,7 +60,12 @@ export default {
         toggle_sidebar(flag) {
             this.sidebar_open = !this.sidebar_open;
         },
-        loginOut() {
+        login(){
+            this.$router.push({
+                name: 'login'
+            })
+        },
+        logOut() {
             let self = this
             self.$store.dispatch("user_clear")
             self.$router.push({
