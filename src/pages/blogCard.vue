@@ -1,33 +1,22 @@
 <template>
-    <div class="blog-card-cont column">
-        <router-link :to="{name:'blog',params:{blog_id:card_info.id}}" class="blog-card ui card">
-            <div class="image">
-                <img :src="card_info.cover">
-            </div>
-            <div class="content">
-                <a class="header">{{card_info.title}}</a>
-                <div class="description">
-                    {{card_info.summary}}
-                </div>
-            </div>
-            <div class="extra content">
-                <div class="meta">
-                    <span v-for="tag in card_info.tags">#{{tag}}</span>
-                </div>
-                <div class="meta">
-                    <span class="z-tag">
-                        <span class="date">{{card_info.updated}}</span>
-                    </span>
-                    <span class="z-tag right">
-                        <i class="unhide icon"></i>{{card_info.reads_count}}
-                        <i class="comment icon"></i>{{card_info.comments_count}}
-                    </span>
-                </div>
-            </div>
-        </router-link>
-    </div>
+    <router-link class="blog-card-cont" :to="{name:'blog',params:{blog_id:card_info.id}}" >
+        <mu-card>
+          <mu-card-media title="Image Title" subTitle="Image Sub Title">
+            <img src="card_info.cover" />
+          </mu-card-media>
+          <mu-card-title title="Content Title" subTitle="Content Title"/>
+          <mu-card-text>
+            {{card_info.summary | max_len('20')}}
+          </mu-card-text>
+          <mu-card-actions>
+            <mu-flat-button label="Action 1"/>
+            <mu-flat-button label="Action 2"/>
+          </mu-card-actions>
+        </mu-card>
+    </router-link>
 </template>
 <script>
+import filters from '@/filters';
 export default {
     name: 'blogCard',
     props: {
@@ -46,16 +35,19 @@ export default {
                     updated: "",
                     summary: "",
                     reads_count: "",
-                    comments_count:"",
-                    tags:[]
+                    comments_count: "",
+                    tags: []
                 }
             }
         }
-    }
+    },
+    filters
 }
 </script>
 <style lang="scss">
-.right{
-    float: right;
+.blog-card-cont{
+    .cover{
+
+    }
 }
 </style>

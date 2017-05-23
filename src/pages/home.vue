@@ -1,25 +1,23 @@
 <template>
     <div class="home">
-        <mu-card v-for="(blog,index) in blogs">
-          <mu-card-media >
-            <img :src="blog.cover" />
-          </mu-card-media>
-          <mu-card-title :title="blog.title"/>
-          <mu-card-text>
-            {{blog.summary}}
-          </mu-card-text>
-        </mu-card>
+        <blogCard v-for="(blog,index) in blogs"
+        v-bind:card_info="blog"
+        v-bind:index="index"
+        :key="blog.id">
+        </blogCard>
     </div>
 </template>
 <script>
 import axios from 'axios'
-import {DOMAIN} from '@/config.js'
+import {
+    DOMAIN
+} from '@/config.js'
 import blogCard from '@/pages/blogCard.vue'
 export default {
     name: 'home',
     data() {
         return {
-            blogs:[]
+            blogs: []
         }
     },
     methods: {},
