@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/**
+ * @param  {PX} 像素
+ * @return {REM}
+ * $v/20px * 1rem; 375设计稿
+ * $v/40px * 1rem; 750设计稿
+ */
+
+@function rem($v) {
+    // @return $v/20px * 1rem;
+    @return $v/40px * 1rem;
+}

@@ -1,49 +1,46 @@
 <template>
     <div id="app">
-        <div class="z-nav ui container">
-            <div class="ui secondary pointing menu">
-                <router-link class="item" :to="{name:'home'}">首页</router-link>
-                <router-link class="item" :to="{name:'blogs'}">博客</router-link>
-                <router-link class="item" :to="{name:'lab'}">实验室</router-link>
-                <router-link class="item" :to="{name:'about'}">关于</router-link>
-            </div>
-            <div class="setting-menu">
-                <div class="ui dropdown">
-                    <i class="content icon"></i>
-                    <div class="menu">
-                        <router-link v-if="!token" class="item" :to="{name:'login'}">登录</router-link>
-                        <router-link v-if="token" class="item" :to="{name:'dashboard'}"><i class="bar chart icon"></i></router-link>
-                        <router-link v-if="token" class="item" :to="{name:'blogList'}"><i class="newspaper icon"></i></router-link>
-                        <router-link v-if="token" class="item" :to="{name:'setting'}"><i class="setting icon"></i></router-link>
-                        <div v-if="token" class="item" @click="loginOut">退出</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="z-content ui container">
-            <router-view></router-view>
-        </div>
-        <div class="ui container">
-            <div class="z-footer">
-                <span class="icp">
-              <i class="copyright icon"></i> 2017 All rights reserved.
-            </span>
-                <span class="info">
-              <i class="rocket icon"></i> Vue &amp; Flask 强劲驱动
-            </span>
-            </div>
-        </div>
+        <mu-appbar title="MARK24">
+            <mu-icon-button icon="menu" slot="left" @click="toggle_sidebar()" />
+            <mu-icon-menu icon="account_circle" slot="right">
+                <mu-menu-item title="登录" />
+                <mu-menu-item title="登出" />
+            </mu-icon-menu>
+        </mu-appbar>
+        <!-- <router-view></router-view>  -->
+        <mu-drawer :open="sidebar_open" :docked="sidebar_docked" @close="toggle_sidebar(true)">
+            <mu-appbar title="" @click.native="sidebar_open = false"></mu-appbar>
+            <mu-list>
+                <mu-list-item title="首页" />
+                <mu-list-item title="博客" />
+                <mu-list-item title="实验室" />
+                <mu-list-item title="关于" @click.native="sidebar_open = false" />
+                <mu-divider/>
+                <mu-icon-button href="https://github.com/mark24code">
+                    <i class="fa fa-github"></i>
+                </mu-icon-button>
+                <mu-icon-button href="http://weibo.com/wb2young">
+                    <i class="fa fa-weibo"></i>
+                </mu-icon-button>
+                <mu-icon-button href="https://www.zhihu.com/people/mark24">
+                    <i class="fa fa-quote-left"></i>
+                </mu-icon-button>
+
+            </mu-list>
+        </mu-drawer>
     </div>
 </template>
 <script>
-
 export default {
     name: 'app',
     mounted() {
 
     },
     data() {
-        return {}
+        return {
+            sidebar_open: false,
+            sidebar_docked: false
+        }
     },
     computed: {
         token() {
@@ -52,6 +49,9 @@ export default {
         }
     },
     methods: {
+        toggle_sidebar(flag) {
+            this.sidebar_open = !this.sidebar_open;
+        },
         loginOut() {
             let self = this
             self.$store.dispatch("user_clear")
@@ -63,33 +63,4 @@ export default {
 }
 </script>
 <style lang='scss'>
-#app .setting-menu {
-    position: fixed;
-    right: 50px;
-    top: 10px;
-    z-index: 9999;
-}
-
-.z-nav {
-    background:red;
-}
-
-.z-content {
-    margin-top: 40px;
-    min-height: 420px;
-}
-
-.z-footer {
-    margin-top: 30px;
-    border-top: 1px dashed #ddd;
-    padding: 5px 0 30px 0;
-    .icp {
-        color: #999;
-        float: left;
-    }
-    .info {
-        color: #999;
-        float: right;
-    }
-}
 </style>
