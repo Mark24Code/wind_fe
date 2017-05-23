@@ -1,28 +1,28 @@
 <template>
-    <div class="blog">
+    <div class="blog-page">
         <VueMarkdown v-if="blog.content">{{blog.content}}</VueMarkdown>
-        <div class="z-extra content">
+        <div class="blog-info content">
             <div class="meta">
                 <span v-for="tag in blog.tags">#{{tag}}</span>
             </div>
             <div class="meta">
-                <span class="z-tag">
+                <span class="blog-tag">
                         <span class="date">{{blog.updated}}</span>
                 </span>
-                <span class="z-tag right">
-                        <i class="unhide icon"></i>{{blog.reads_count}}
-                        <i class="comment icon"></i>{{blog.comments_count}}
-                    </span>
+                <span class="blog-tag">
+                    <i class="unhide icon"></i>{{blog.reads_count}}
+                    <i class="comment icon"></i>{{blog.comments_count}}
+                </span>
             </div>
         </div>
     </div>
 </template>
 <script>
-import axios from 'axios'
+import axios from 'axios';
 import {
     DOMAIN
-} from '@/config.js'
-import VueMarkdown from 'vue-markdown'
+} from '@/config.js';
+import VueMarkdown from 'vue-markdown';
 export default {
     name: 'blog',
     data() {
@@ -54,10 +54,15 @@ export default {
 }
 </script>
 <style lang="scss">
-.blog img{
-    width: 80%;
+.blog-page{
+    margin: 20px;
+    img{
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
 }
-.z-extra{
+.blog-info{
     margin-top: 20px;
     border-top: 1px dashed #ddd;
     padding:10px 0;

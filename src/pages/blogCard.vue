@@ -1,17 +1,17 @@
 <template>
     <router-link class="blog-card-cont" :to="{name:'blog',params:{blog_id:card_info.id}}" >
         <mu-card>
-          <mu-card-media title="Image Title" subTitle="Image Sub Title">
-            <img src="card_info.cover" />
+          <mu-card-media :title="card_info.title" :subTitle="card_info.updated">
+            <img :src="card_info.cover" />
           </mu-card-media>
-          <mu-card-title title="Content Title" subTitle="Content Title"/>
+          <!-- <mu-card-title title="Content Title" subTitle="Content Title"/> -->
           <mu-card-text>
-            {{card_info.summary | max_len('20')}}
+            {{card_info.summary | max_len('40')}}
           </mu-card-text>
-          <mu-card-actions>
+<!--           <mu-card-actions>
             <mu-flat-button label="Action 1"/>
             <mu-flat-button label="Action 2"/>
-          </mu-card-actions>
+          </mu-card-actions> -->
         </mu-card>
     </router-link>
 </template>
@@ -46,6 +46,9 @@ export default {
 </script>
 <style lang="scss">
 .blog-card-cont{
+    padding: 20px;
+    display: block;
+    overflow: hidden;
     .cover{
 
     }

@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div class="home-page">
         <blogCard v-for="(blog,index) in blogs"
         v-bind:card_info="blog"
         v-bind:index="index"
@@ -41,4 +41,8 @@ export default {
     }
 }
 </script>
-<style></style>
+<style lang="scss">
+.home-page{
+    position: relative;
+}
+</style>
