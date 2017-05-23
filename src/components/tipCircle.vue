@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="tipCircle">
         <mu-float-button mini icon="casino" class="float-button" @click="openPopTips" />
         <mu-drawer right :open="rightPopup" @close="openPopTips()">
             <mu-appbar title="书写约定" />
@@ -36,9 +36,14 @@ export default {
 }
 </script>
 <style lang="scss" scope>
-.float-button {
-    position: absolute;
+.tipCircle{
+    position:absolute;
     top: 10px;
     right: 10px;
 }
+// .float-button {
+//     position: absolute;
+//     top: 10px;
+//     right: 10px;
+// }
 </style>

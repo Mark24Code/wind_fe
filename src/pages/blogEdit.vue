@@ -104,6 +104,13 @@ export default {
 </script>
 <style lang="scss">
 .blogEdit {
+
+    img{
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+
     textarea {
         border: none;
         resize: none;
