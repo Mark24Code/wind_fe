@@ -5,6 +5,7 @@
             <mu-tab value="preview_tab" title="预览" @click="activePreview"/>
         </mu-tabs>
         <div id="editor"  v-if="activeTab === 'edit_tab'">
+            <TipCircle></TipCircle>
             <textarea v-model="content" rows="20"></textarea>
         </div>
         <div id="preview" v-if="activeTab === 'preview_tab'">
@@ -17,8 +18,9 @@
     </div>
 </template>
 <script>
-import axios from 'axios'
-import VueMarkdown from 'vue-markdown'
+import axios from 'axios';
+import VueMarkdown from 'vue-markdown';
+import TipCircle from '@/components/tipCircle';
 import {
     DOMAIN
 } from '@/config.js'
@@ -75,7 +77,8 @@ export default {
     },
     mounted() {},
     components: {
-        VueMarkdown
+        VueMarkdown,
+        TipCircle
     }
 }
 </script>
@@ -93,6 +96,7 @@ export default {
     }
     #editor{
         padding:20px;
+        position: relative;
     }
     #preview {
         min-height: 380px;

@@ -1,13 +1,14 @@
 <template>
     <div class="home">
-        <div class="ui stackable three column grid">
-            <blogCard
-              v-for="(blog,index) in blogs"
-              v-bind:card_info="blog"
-              v-bind:index="index"
-              :key="blog.id">
-            </blogCard>
-        </div>
+        <mu-card v-for="(blog,index) in blogs">
+          <mu-card-media >
+            <img :src="blog.cover" />
+          </mu-card-media>
+          <mu-card-title :title="blog.title"/>
+          <mu-card-text>
+            {{blog.summary}}
+          </mu-card-text>
+        </mu-card>
     </div>
 </template>
 <script>
