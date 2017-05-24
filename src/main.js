@@ -12,6 +12,10 @@ import MuseUI from 'muse-ui';
 import 'muse-ui/dist/muse-ui.css';
 
 Vue.use(MuseUI)
+
+/*Vedio*/
+import VueVideoPlayer from 'vue-video-player';
+Vue.use(VueVideoPlayer);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

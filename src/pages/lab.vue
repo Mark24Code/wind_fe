@@ -25,14 +25,14 @@ export default {
                 link:'lab_sudoku'
             },{
                 image: '/static/labs/memory_game.png',
-                title: '记忆大师',
+                title: '记忆卡片',
                 author: 'Vuejs',
                 link:'lab_memory_game'
             },{
-                image: '/static/labs/sudoku.png',
-                title: 'Sudoku',
-                author: 'Vuejs',
-                link:'lab_sudoku'
+                image: '/static/labs/vedioplayer.png',
+                title: '视频播放器',
+                author: 'MARK',
+                link:'lab_vedioplayer'
             },{
                 image: '/static/labs/sudoku.png',
                 title: 'Sudoku',

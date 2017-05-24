@@ -16,6 +16,7 @@ import blogEdit from '@/pages/blogEdit';
 import lab from '@/pages/lab';
     import Sudoku from '@/pages/labSubs/Sudoku';
     import MemoryGame from '@/pages/labSubs/MemoryGame';
+    import VedioPlayer from '@/pages/labSubs/VedioPlayer';
 
 Vue.use(Router);
 
@@ -80,7 +81,12 @@ let routes = [{
     name:'lab_memory_game',
     path:'/lab_memory_game',
     component:MemoryGame
+},{
+    name:'lab_vedioplayer',
+    path:'/lab_vedioplayer',
+    component:VedioPlayer
 }]
+
 
 let router = new Router({
     linkActiveClass: 'active',
