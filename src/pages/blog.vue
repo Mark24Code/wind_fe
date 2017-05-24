@@ -9,10 +9,10 @@
                 <span class="blog-tag">
                         <span class="date">{{blog.updated}}</span>
                 </span>
-                <span class="blog-tag">
+<!--                 <span class="blog-tag">
                     <i class="unhide icon"></i>{{blog.reads_count}}
                     <i class="comment icon"></i>{{blog.comments_count}}
-                </span>
+                </span> -->
             </div>
         </div>
     </div>
