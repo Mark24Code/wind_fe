@@ -15,6 +15,7 @@ import blogEdit from '@/pages/blogEdit';
 
 import lab from '@/pages/lab';
     import Sudoku from '@/pages/labSubs/Sudoku';
+    import MemoryGame from '@/pages/labSubs/MemoryGame';
 
 Vue.use(Router);
 
@@ -75,6 +76,10 @@ let routes = [{
     name:'lab_sudoku',
     path:'/lab_sudoku',
     component:Sudoku
+},{
+    name:'lab_memory_game',
+    path:'/lab_memory_game',
+    component:MemoryGame
 }]
 
 let router = new Router({
