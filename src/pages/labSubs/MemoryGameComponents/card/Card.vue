@@ -1,14 +1,14 @@
 <template>
     <div class="container" v-on:click="flip">
         <div class="card" v-bind:class="{ flipped: option.flipped }">
-            <img class="front" v-if="option.cardName === '8-ball'" src="/static/labs/memory_game/8-ball.png"/>
-            <img class="front" v-if="option.cardName === 'baked-potato'" src="/static/labs/memory_game/baked-potato.png"/>
-            <img class="front" v-if="option.cardName === 'dinosaur'" src="/static/labs/memory_game/dinosaur.png"/>
-            <img class="front" v-if="option.cardName === 'kronos'" src="/static/labs/memory_game/kronos.png"/>
-            <img class="front" v-if="option.cardName === 'rocket'" src="/static/labs/memory_game/rocket.png"/>
-            <img class="front" v-if="option.cardName === 'skinny-unicorn'" src="/static/labs/memory_game/skinny-unicorn.png"/>
-            <img class="front" v-if="option.cardName === 'that-guy'" src="/static/labs/memory_game/that-guy.png"/>
-            <img class="front" v-if="option.cardName === 'zeppelin'" src="/static/labs/memory_game/zeppelin.png"/>
+            <img class="front" v-if="option.cardName === 'flask'" src="/static/labs/memory_game/flask.png"/>
+            <img class="front" v-if="option.cardName === 'git'" src="/static/labs/memory_game/git.png"/>
+            <img class="front" v-if="option.cardName === 'github'" src="/static/labs/memory_game/github.png"/>
+            <img class="front" v-if="option.cardName === 'js'" src="/static/labs/memory_game/js.png"/>
+            <img class="front" v-if="option.cardName === 'node'" src="/static/labs/memory_game/node.png"/>
+            <img class="front" v-if="option.cardName === 'python'" src="/static/labs/memory_game/python.png"/>
+            <img class="front" v-if="option.cardName === 'vue'" src="/static/labs/memory_game/vue.png"/>
+            <img class="front" v-if="option.cardName === 'webpack'" src="/static/labs/memory_game/webpack.png"/>
 
             <img class="back" src="/static/labs/memory_game/back.png"/>
         </div>

@@ -45,7 +45,6 @@ export default {
     width: 238px;
     margin-top: 10px;
     margin:20px auto;
-
 }
 
 .cell {

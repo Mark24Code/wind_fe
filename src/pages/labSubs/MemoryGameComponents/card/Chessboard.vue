@@ -57,7 +57,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .chessboard{
     margin-top: 20px;
     width: 100%;
@@ -71,11 +71,15 @@ export default {
     align-items: center;
     align-content: space-around;
     overflow: hidden;
+    .container{
+        margin: 0 auto;
+    }
+    .container:nth-child(4n){
+        margin-right: 0px;
+    }
 }
 
-.container:nth-child(4n){
-    margin-right: 0px;
-}
+
 
 @media screen and (max-width: 450px) {
     .chessboard{
