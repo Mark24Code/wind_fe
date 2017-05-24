@@ -34,10 +34,10 @@ export default {
                 author: 'MARK',
                 link:'lab_vedioplayer'
             },{
-                image: '/static/labs/sudoku.png',
-                title: 'Sudoku',
+                image: '/static/labs/todos.png',
+                title: 'Todos',
                 author: 'Vuejs',
-                link:'lab_sudoku'
+                link:'lab_todo'
             }]
         }
     },

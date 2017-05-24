@@ -17,6 +17,7 @@ import lab from '@/pages/lab';
     import Sudoku from '@/pages/labSubs/Sudoku';
     import MemoryGame from '@/pages/labSubs/MemoryGame';
     import VedioPlayer from '@/pages/labSubs/VedioPlayer';
+    import Todo from '@/pages/labSubs/Todo';
 
 Vue.use(Router);
 
@@ -85,6 +86,10 @@ let routes = [{
     name:'lab_vedioplayer',
     path:'/lab_vedioplayer',
     component:VedioPlayer
+},{
+    name:'lab_todo',
+    path:'/lab_todo',
+    component:Todo
 }]
 
 
