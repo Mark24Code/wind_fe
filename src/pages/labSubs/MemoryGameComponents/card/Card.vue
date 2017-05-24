@@ -90,8 +90,8 @@ export default {
 
 @media screen and (max-width: 450px) {
     .container{
-        width: 92px;
-        height: 111px;
+        width: 82px;
+        height: 90px;
         margin-right: 1px;
     }
 }

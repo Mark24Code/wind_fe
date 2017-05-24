@@ -1,6 +1,6 @@
 <template>
     <div class="score">
-        <span>Highest Speed</span>
+        <span>最快手速</span>
         <h2>{{ highestSpeed }}</h2>
     </div>
 </template>

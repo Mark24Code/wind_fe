@@ -62,7 +62,7 @@ export default {
     margin-top: 20px;
     width: 100%;
     background-color: #fff;
-    height: 530px;
+    height: 5030px;
     border-radius: 4px;
     padding: 10px 5px;
     display: flex;
@@ -70,6 +70,7 @@ export default {
     justify-content: center;
     align-items: center;
     align-content: space-around;
+    overflow: hidden;
 }
 
 .container:nth-child(4n){
@@ -84,7 +85,7 @@ export default {
 }
 @media screen and (max-width: 370px) {
     .chessboard{
-        height: 450px;
+        height: 480px;
     }
 }
 </style>

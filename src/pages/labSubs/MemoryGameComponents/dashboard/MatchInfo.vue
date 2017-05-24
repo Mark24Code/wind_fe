@@ -1,6 +1,6 @@
 <template>
     <div class="board">
-        <span>Pairs Left To Match</span>
+        <span>剩余对数</span>
         <h2>{{ leftMatched }}</h2>
     </div>
 </template>

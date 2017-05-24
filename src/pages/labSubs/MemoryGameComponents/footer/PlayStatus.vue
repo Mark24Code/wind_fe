@@ -1,9 +1,9 @@
 <template>
     <div class="status-footer">
-        <span v-if="status === READY">Ready</span>
-        <span v-if="status === PLAYING">Playing</span>
-        <a v-if="status === PASS" v-on:click.prevent.stop="reset" href>Play again</a>
-        <span class="elapsed">{{ elapsedMs }} s</span>
+        <span v-if="status === READY">准备</span>
+        <span v-if="status === PLAYING">加油啊</span>
+        <a v-if="status === PASS" v-on:click.prevent.stop="reset" href>再战</a>
+        <span class="elapsed">{{ elapsedMs }} 秒</span>
     </div>
 </template>
 

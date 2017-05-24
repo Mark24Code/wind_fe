@@ -1,5 +1,5 @@
 <template>
-    <h1 class="logo"><a href="https://github.com/leftstick/vue-memory-game" target="_blank">Memory</a></h1>
+    <h1 class="logo">记忆卡片</h1>
 </template>
 
 <script>
