@@ -61,7 +61,7 @@ export default {
 .chessboard{
     margin-top: 20px;
     width: 100%;
-    background-color: #fff;
+    background-color: #faf8ef;
     height: 5030px;
     border-radius: 4px;
     padding: 10px 5px;

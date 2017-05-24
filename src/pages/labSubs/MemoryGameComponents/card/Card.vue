@@ -79,12 +79,12 @@ export default {
 }
 
 .card .back {
-    background: blue;
+    background: #f4f4f4;
     transform: rotateY( 0deg );
 }
 
 .card .front {
-    background: blue;
+    background: #f4f4f4;
     transform: rotateY( 180deg );
 }
 
