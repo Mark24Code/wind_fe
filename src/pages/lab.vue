@@ -3,13 +3,10 @@
         <div class="lab-gridlist">
             <mu-grid-list class="gridlist-demo">
                 <mu-sub-header>实验室</mu-sub-header>
-                <router-link>
-
-                </router-link>
-                <mu-grid-tile v-for="(tile, index) in list" :key="index">
-                    <img :src="tile.image" />
-                    <span slot="title">{{tile.title}}</span>
-                    <span slot="subTitle">by <b>{{tile.author}}</b></span>
+                <mu-grid-tile v-for="(project, index) in lab_projects" :key="index" >
+                    <img :src="project.image" @click="goProjectPage(project.link)" />
+                    <span slot="title">{{project.title}}</span>
+                    <span slot="subTitle">by <b>{{project.author}}</b></span>
                 </mu-grid-tile>
             </mu-grid-list>
         </div>
@@ -21,44 +18,34 @@ export default {
     name: 'lab',
     data() {
         return {
-            list: [{
-                image: '/static/labs/camera.jpg',
-                title: 'Breakfast',
-                author: 'Myron',
-                link:"{name:'lab_sudoku'}"
-            }, {
-                image: '/static/labs/camera.jpg',
-                title: 'Burger',
-                author: 'Linyu'
-            }, {
-                image: '/static/labs/camera.jpg',
-                title: 'Camera',
-                author: 'ruolin'
-            }, {
-                image: '/static/labs/camera.jpg',
-                title: 'Hats',
-                author: 'kakali'
-            }, {
-                image: '/static/labs/camera.jpg',
-                title: 'Honey',
-                author: 'yuyang'
-            }, {
-                image: '/static/labs/camera.jpg',
-                title: 'Morning',
-                author: 'mokayi'
-            }, {
-                image: '/static/labs/camera.jpg',
-                title: 'Vegetables',
-                author: 'NUyyyyyyy'
-            }, {
-                image: '/static/labs/camera.jpg',
-                title: 'water',
-                author: 'TDDyyyyyyy'
+            lab_projects: [{
+                image: '/static/labs/sudoku.png',
+                title: 'Sudoku',
+                author: 'Vuejs',
+                link:'lab_sudoku'
+            },{
+                image: '/static/labs/sudoku.png',
+                title: 'Sudoku',
+                author: 'Vuejs',
+                link:'lab_sudoku'
+            },{
+                image: '/static/labs/sudoku.png',
+                title: 'Sudoku',
+                author: 'Vuejs',
+                link:'lab_sudoku'
+            },{
+                image: '/static/labs/sudoku.png',
+                title: 'Sudoku',
+                author: 'Vuejs',
+                link:'lab_sudoku'
             }]
         }
     },
     methods: {
-
+        goProjectPage(link){
+            console.log('>>>>>>');
+            this.$router.push({name:link});
+        }
     },
     mounted() {},
     components: {
