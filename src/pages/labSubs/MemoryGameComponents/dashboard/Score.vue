@@ -6,13 +6,13 @@
 </template>
 
 <script>
-import { highestSpeed } from '@/vuex/modules/memory_game/getters/stateHolder';
+import { mapGetters } from 'vuex';
 
 export default {
-    vuex: {
-        getters: {
-            highestSpeed
-        }
+    computed: {
+        ...mapGetters([
+            'highestSpeed'
+        ])
     }
 }
 </script>

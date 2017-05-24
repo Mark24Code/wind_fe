@@ -8,25 +8,27 @@
 </template>
 
 <script>
-import { reset } from '@/vuex/modules/memory_game/actions/controlCenter';
-import { status, elapsedMs } from '@/vuex/modules/memory_game/getters/stateHolder';
+import { mapActions, mapGetters } from 'vuex';
 
 import { STATUS } from '@/vuex/modules/memory_game/store/statusEnum';
 
 export default {
 
-    data: function() {
+    data() {
         return STATUS;
     },
 
-    vuex: {
-        actions: {
-            reset
-        },
-        getters: {
-            status,
-            elapsedMs
-        }
+    computed: {
+        ...mapGetters([
+            'status',
+            'elapsedMs'
+        ])
+    },
+
+    methods: {
+        ...mapActions([
+            'reset'
+        ])
     }
 
 }

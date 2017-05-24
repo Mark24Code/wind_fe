@@ -4,7 +4,7 @@ import mutations from './mutations'
 import actions from './actions'
 import getters from './getters'
 
-import memory_game from '@/vuex/modules/memory_game/store/index.js'
+import memory_game from './modules/memory_game/store/index.js'
 Vue.use(Vuex)
 
 const state = {

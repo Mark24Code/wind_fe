@@ -1,41 +1,39 @@
 <template>
     <div class="chessboard">
-        <Card v-for="(cart,index) in cards" :option="cart" v-on:flipped="onFlipped" :key="index"></Card>
+        <Card v-for="(card, index) of cards" :key="index" :option="card" v-on:flipped="onFlipped"></Card>
     </div>
 </template>
 
 <script>
 import Card from './Card';
 
-import { updateStatus, match, flipCards } from '@/vuex/modules/memory_game/actions/controlCenter';
-import { leftMatched, cards, status } from '@/vuex/modules/memory_game/getters/stateHolder';
+import { mapActions, mapGetters } from 'vuex';
 
 import { STATUS } from '@/vuex/modules/memory_game/store/statusEnum';
 
 export default {
 
-    data: function() {
+    data() {
         return {
             lastCard: null
         };
     },
 
-    vuex: {
-        actions: {
-            updateStatus,
-            match,
-            flipCards
-        },
-        getters: {
-            leftMatched,
-            cards,
-            status
-        }
+    computed: {
+        ...mapGetters([
+            'leftMatched',
+            'cards',
+            'status'
+        ])
     },
 
     methods: {
-
-        onFlipped: function(e) {
+        ...mapActions([
+            'updateStatus',
+            'match',
+            'flipCards'
+        ]),
+        onFlipped(e) {
             if(this.status === STATUS.READY){
                 this.updateStatus(STATUS.PLAYING);
             }
@@ -53,7 +51,6 @@ export default {
                 this.flipCards([lastCard, e]);
             }, 1000);
         }
-
     },
 
     components: {Card}

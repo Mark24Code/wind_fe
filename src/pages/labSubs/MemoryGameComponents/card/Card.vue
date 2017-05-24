@@ -16,14 +16,14 @@
 </template>
 
 <script>
-import { flipCard } from '@/vuex/modules/memory_game/actions/controlCenter';
+import { mapActions } from 'vuex';
 
 export default {
 
     props: {
         option: {
             type: Object,
-            default: function () {
+            default () {
                 return {
                     flipped: false,
                     cardName: ''
@@ -32,14 +32,11 @@ export default {
         }
     },
 
-    vuex: {
-        actions: {
-            flipCard
-        }
-    },
-
     methods: {
-        flip: function() {
+        ...mapActions([
+            'flipCard'
+        ]),
+        flip() {
             if(this.option.flipped){
                 return;
             }
