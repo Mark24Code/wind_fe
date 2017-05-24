@@ -24,10 +24,10 @@ export default {
                 author: 'Vuejs',
                 link:'lab_sudoku'
             },{
-                image: '/static/labs/sudoku.png',
-                title: 'Sudoku',
+                image: '/static/labs/memory_game.png',
+                title: '记忆大师',
                 author: 'Vuejs',
-                link:'lab_sudoku'
+                link:'lab_memory_game'
             },{
                 image: '/static/labs/sudoku.png',
                 title: 'Sudoku',
